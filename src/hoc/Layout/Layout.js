@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import classes from './Layout.module.css'
+import Quiz from '../../containers/Quiz/Quiz'
 
 class Layout extends Component {
     render() {
