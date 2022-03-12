@@ -4,6 +4,7 @@ import ActiveQuiz from "../../components/ActiveQuiz/ActiveQuiz";
 
 class Quiz extends React.Component {
     state = {
+        activeQuestion: 0,
         quiz: [
             {
                 question: 'Какого цвета небо?',
@@ -31,6 +32,8 @@ class Quiz extends React.Component {
                         answers={this.state.quiz[0].answers}
                         question={this.state.quiz[0].question}
                         onAnswerClick={this.onAnswerClickHandler}
+                        quizLength={this.state.quiz.length}
+                        answerNumber={this.state.activeQuestion + 1}
                     />
                 </div>
             </div>
