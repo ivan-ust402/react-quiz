@@ -5,12 +5,19 @@ const FinishedQuiz = props => {
     return (
         <div className={classes.FinishedQuiz}>
             <ul>
-                { props.quiz.map((question, index) => {
+                { props.quiz.map((quizItem, index) => {
+                    const cls = [
+                        'fa', 
+                        props.results[quizItem.id] === 'error' ? 'fa-times' : 'fa-check',
+                        classes[props.results[quizItem.id]]
+                    ]
                     return (
                         <li 
                             key={index}
                         >
-                            <strong
+                            <strong>{index + 1}</strong>.&nbsp;
+                            {quizItem.question}
+                            <i className={cls.join(' ')}/>
                         </li>
                     )
                 }) }
