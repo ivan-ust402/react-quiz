@@ -18,6 +18,10 @@ class Quiz extends React.Component {
         ]
     }
 
+    onAnswerClickHandler = (answerId) => {
+        console.log('Answer Id: ', answerId)
+    }
+
     render () {
         return (
             <div className={classes.Quiz}>
@@ -26,6 +30,7 @@ class Quiz extends React.Component {
                     <ActiveQuiz 
                         answers={this.state.quiz[0].answers}
                         question={this.state.quiz[0].question}
+                        onAnswerClick={this.onAnswerClickHandler()}
                     />
                 </div>
             </div>
