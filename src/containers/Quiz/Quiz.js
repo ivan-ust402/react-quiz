@@ -6,11 +6,12 @@ class Quiz extends React.Component {
     state = {
         quiz: [
             {
+                question: 'Какого цвета небо?',
                 answers: [
-                    {text: 'Ответ 1'},
-                    {text: 'Ответ 2'},
-                    {text: 'Ответ 3'},
-                    {text: 'Ответ 4'}
+                    {text: 'Черный', id: 1},
+                    {text: 'Синий', id: 2},
+                    {text: 'Красный', id: 3},
+                    {text: 'Зеленый', id: 4}
                 ]
             }
         ]
