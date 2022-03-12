@@ -20,7 +20,7 @@ class Quiz extends React.Component {
         return (
             <div className={classes.Quiz}>
                 <div className={classes.QuizWrapper}>
-                    <h1>Quiz</h1>
+                    <h1>Ответьте на все вопросы</h1>
                     <ActiveQuiz 
                         answers={this.state.quiz[0].answers}
                     />
