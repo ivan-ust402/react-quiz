@@ -30,7 +30,7 @@ class Quiz extends React.Component {
                     <ActiveQuiz 
                         answers={this.state.quiz[0].answers}
                         question={this.state.quiz[0].question}
-                        onAnswerClick={this.onAnswerClickHandler()}
+                        onAnswerClick={this.onAnswerClickHandler}
                     />
                 </div>
             </div>
