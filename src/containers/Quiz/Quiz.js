@@ -5,6 +5,7 @@ import FinishedQuiz from "../../components/FinishedQuiz/FinishedQuiz";
 
 class Quiz extends React.Component {
     state = {
+        results: {}, //{[id]: success error}
         isFinished: true,
         activeQuestion: 0,
         answerState: null, //{ [id]: 'success' 'error' }
@@ -43,10 +44,15 @@ class Quiz extends React.Component {
         }
 
         const question = this.state.quiz[this.state.activeQuestion]
+        const results = this.state.results
 
         if (question.rightAnswerId === answerId) {
+            if (!results[answerId]) {
+                results[answerId] = 'success'
+            }
             this.setState({
-                answerState: {[answerId]: 'success'}
+                answerState: {[answerId]: 'success'},
+                results
             })
             const timeout = window.setTimeout(() => {
                 if (this.isQuizFinished()) {
@@ -63,8 +69,10 @@ class Quiz extends React.Component {
             }, 1000)
 
         } else {
+            results[answerId] = 'error'
             this.setState({
-                answerState: {[answerId]: 'error'}
+                answerState: {[answerId]: 'error'},
+                results: results
             })
         }
     }
@@ -81,8 +89,8 @@ class Quiz extends React.Component {
                     {
                         this.state.isFinished
                         ? <FinishedQuiz 
-                        
-                        
+                            results={this.state.results}
+                            quiz={this.state.quiz}
                           />
                         : <ActiveQuiz 
                             answers={this.state.quiz[this.state.activeQuestion].answers}

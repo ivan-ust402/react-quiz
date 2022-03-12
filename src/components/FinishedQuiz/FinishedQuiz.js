@@ -5,7 +5,16 @@ const FinishedQuiz = props => {
     return (
         <div className={classes.FinishedQuiz}>
             <ul>
-                <li>
+                { props.quiz.map((question, index) => {
+                    return (
+                        <li 
+                            key={index}
+                        >
+                            <strong
+                        </li>
+                    )
+                }) }
+                {/* <li>
                     <strong> 1. </strong>
                     How are you?
                     <i className={'fa fa-times' + ' ' + classes.error} />
@@ -14,7 +23,7 @@ const FinishedQuiz = props => {
                     <strong> 1. </strong>
                     How are you?
                     <i className={'fa fa-check' + ' ' + classes.success} />
-                </li>
+                </li> */}
             </ul>
 
             <p>Правильно 4 из 10</p>
