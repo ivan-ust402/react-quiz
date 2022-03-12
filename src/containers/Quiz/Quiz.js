@@ -5,7 +5,7 @@ import FinishedQuiz from "../../components/FinishedQuiz/FinishedQuiz";
 
 class Quiz extends React.Component {
     state = {
-        isFinished: false,
+        isFinished: true,
         activeQuestion: 0,
         answerState: null, //{ [id]: 'success' 'error' }
         quiz: [
@@ -80,7 +80,10 @@ class Quiz extends React.Component {
                     <h1>Ответьте на все вопросы</h1>
                     {
                         this.state.isFinished
-                        ? <FinishedQuiz />
+                        ? <FinishedQuiz 
+                        
+                        
+                          />
                         : <ActiveQuiz 
                             answers={this.state.quiz[this.state.activeQuestion].answers}
                             question={this.state.quiz[this.state.activeQuestion].question}
