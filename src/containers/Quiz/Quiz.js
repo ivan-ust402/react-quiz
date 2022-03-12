@@ -47,8 +47,8 @@ class Quiz extends React.Component {
         const results = this.state.results
 
         if (question.rightAnswerId === answerId) {
-            if (!results[answerId]) {
-                results[answerId] = 'success'
+            if (!results[question.id]) {
+                results[question.id] = 'success'
             }
             this.setState({
                 answerState: {[answerId]: 'success'},
