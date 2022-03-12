@@ -24,6 +24,7 @@ class Quiz extends React.Component {
                     <h1>Ответьте на все вопросы</h1>
                     <ActiveQuiz 
                         answers={this.state.quiz[0].answers}
+                        question={this.state.quiz[0].question}
                     />
                 </div>
             </div>
