@@ -81,6 +81,15 @@ class Quiz extends React.Component {
         return this.state.activeQuestion + 1 === this.state.quiz.length
     }
 
+    retryHandler = () => {
+        this.setState({
+            activeQuestion: 0,
+            answerState: null,
+            isFinished: false,
+            results: {}
+        })
+    }
+
     render () {
         return (
             <div className={classes.Quiz}>
@@ -91,6 +100,7 @@ class Quiz extends React.Component {
                         ? <FinishedQuiz 
                             results={this.state.results}
                             quiz={this.state.quiz}
+                            onRetry={this.retryHandler}
                           />
                         : <ActiveQuiz 
                             answers={this.state.quiz[this.state.activeQuestion].answers}
