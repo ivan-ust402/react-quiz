@@ -8,7 +8,12 @@ const FinishedQuiz = props => {
                 <li>
                     <strong> 1. </strong>
                     How are you?
-                    <i className={''} />
+                    <i className={'fa fa-times' + ' ' + classes.error} />
+                </li>
+                <li>
+                    <strong> 1. </strong>
+                    How are you?
+                    <i className={'fa fa-check' + ' ' + classes.success} />
                 </li>
             </ul>
 
