@@ -18,7 +18,7 @@ class Quiz extends React.Component {
         ]
     }
 
-    onAnswerClickHandler = (answerId) => {
+    onAnswerClickHandler = answerId => {
         console.log('Answer Id: ', answerId)
     }
 
