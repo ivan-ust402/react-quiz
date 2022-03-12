@@ -33,6 +33,10 @@ class Quiz extends React.Component {
 
     onAnswerClickHandler = answerId => {
         console.log('Answer Id: ', answerId)
+
+        this.setState({
+            activeQuestion: this.state.activeQuestion + 1
+        })
     }
 
     render () {
@@ -41,8 +45,8 @@ class Quiz extends React.Component {
                 <div className={classes.QuizWrapper}>
                     <h1>Ответьте на все вопросы</h1>
                     <ActiveQuiz 
-                        answers={this.state.quiz[0].answers}
-                        question={this.state.quiz[0].question}
+                        answers={this.state.quiz[this.state.activeQuestion].answers}
+                        question={this.state.quiz[this.state.activeQuestion].question}
                         onAnswerClick={this.onAnswerClickHandler}
                         quizLength={this.state.quiz.length}
                         answerNumber={this.state.activeQuestion + 1}
