@@ -7,6 +7,7 @@ class Quiz extends React.Component {
         quiz: [
             {
                 question: 'Какого цвета небо?',
+                rightAnswerId: 2,
                 answers: [
                     {text: 'Черный', id: 1},
                     {text: 'Синий', id: 2},
