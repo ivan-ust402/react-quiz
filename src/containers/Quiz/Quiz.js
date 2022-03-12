@@ -4,7 +4,11 @@ import ActiveQuiz from "../../components/ActiveQuiz/ActiveQuiz";
 
 class Quiz extends React.Component {
     state = {
-        quiz: []
+        quiz: [
+            {
+                answers:
+            }
+        ]
     }
 
     render () {
