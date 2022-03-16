@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import classes from './QuizCreator.module.css'
 import Button from '../../components/UI/Button/Button'
 import Input from '../../components/UI/Input/Input'
-import {createControl} from '../../form/formFramework'
+import {createControl, validate} from '../../form/formFramework'
 import Auxiliary from '../../hoc/Auxiliary/Auxiliary'
 import Select from '../../components/UI/Select/Select'
 
@@ -31,6 +31,7 @@ export default class QuizCreator extends Component {
 
     state = {
         quiz: [],
+        isFormValid: false,
         rightAnswerId: 1,
         formControls: createFormControls()
     }
@@ -52,7 +53,14 @@ export default class QuizCreator extends Component {
 
         control.touched = true
         control.value = value
-        control.valid=
+        control.valid = validate(control.value, control.validation)
+
+        formControls[controlName] = control
+
+        this.setState({
+            formControls,
+            isFormValid: 
+        })
     }
 
     renderControls() {
