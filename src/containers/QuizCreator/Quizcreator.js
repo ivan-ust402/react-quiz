@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import classes from './QuizCreator.module.css'
 import Button from '../../components/UI/Button/Button'
 import Input from '../../components/UI/Input/Input'
-import {createControl, validate} from '../../form/formFramework'
+import {createControl, validate, validateForm} from '../../form/formFramework'
 import Auxiliary from '../../hoc/Auxiliary/Auxiliary'
 import Select from '../../components/UI/Select/Select'
 
@@ -21,10 +21,10 @@ function createFormControls() {
                 label: 'Введите вопрос',
                 errorMessage: 'Вопрос не может быть пустым'
             }, {required: true}),
-            option1: createControl(createOptionControl(1)),
-            option2: createControl(createOptionControl(2)),
-            option3: createControl(createOptionControl(3)),
-            option4: createControl(createOptionControl(4))
+            option1: createOptionControl(1),
+            option2: createOptionControl(2),
+            option3: createOptionControl(3),
+            option4: createOptionControl(4)
         }
 }
 export default class QuizCreator extends Component {
@@ -39,8 +39,8 @@ export default class QuizCreator extends Component {
         event.preventDefault()
     }
 
-    addQuestionHandler = () => {
-
+    addQuestionHandler = event => {
+        event.preventDefault()
     }
 
     createQuizHandler = () => {
@@ -59,7 +59,7 @@ export default class QuizCreator extends Component {
 
         this.setState({
             formControls,
-            isFormValid: 
+            isFormValid: validateForm(formControls)
         })
     }
 
@@ -77,7 +77,8 @@ export default class QuizCreator extends Component {
                         errorMessage={control.errorMessage}
                         onChange={event => this.changeHandler(event.target.value, controlName)}
                     />
-                    { index === 0 ? <hr/>: null }   
+                    { index === 0 ? <hr /> : null }  
+                     
                 </Auxiliary>
             )
         })
@@ -110,7 +111,7 @@ export default class QuizCreator extends Component {
                     <form onSubmit={this.submitHandler}>
 
                         { this.renderControls() }
-
+                        
                         { select }
                         <Button
                             type="primary"
