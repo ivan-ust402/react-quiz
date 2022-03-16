@@ -18,7 +18,7 @@ export function validate(value, validation = null) {
     if (validation.required) {
         isValid = value.trim() !== '' && isValid
     }
-    console.log(isValid)
+    
     return isValid
 }
 
@@ -34,6 +34,6 @@ export function validateForm(formControls) {
             isFormValid = formControls[control].valid && isFormValid
         }
     }
-    console.log(isFormValid)
+    
     return isFormValid
 }
