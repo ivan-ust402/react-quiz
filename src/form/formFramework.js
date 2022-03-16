@@ -12,4 +12,28 @@ export function validate(value, validation = null) {
     if (!validation) {
         return true
     }
+
+    let isValid = true
+
+    if (validation.required) {
+        isValid = value.trim() !== '' && isValid
+    }
+    console.log(isValid)
+    return isValid
+}
+
+export function validateForm(formControls) {
+    let isFormValid = true
+
+    // Object.keys(formControls).forEach(name => {
+    //     isFormValid = formControls[name].valid && isFormValid
+    // })
+
+    for (let control in formControls) {
+        if (formControls.hasOwnProperty(control)) {
+            isFormValid = formControls[control].valid && isFormValid
+        }
+    }
+    console.log(isFormValid)
+    return isFormValid
 }
