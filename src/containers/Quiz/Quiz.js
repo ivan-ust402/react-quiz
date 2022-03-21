@@ -37,6 +37,7 @@ class Quiz extends React.Component {
         ],
         loading: true
     }
+    
 
     onAnswerClickHandler = answerId => {
         if (this.state.answerState) {

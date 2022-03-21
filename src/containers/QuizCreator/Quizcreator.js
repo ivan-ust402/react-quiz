@@ -50,7 +50,7 @@ export default class QuizCreator extends Component {
 
         const questionItem = {
             question: question.value,
-            is: index,
+            id: index,
             rightAnswerId: this.state.rightAnswerId,
             answers: [
                 {text: option1.value, id: option1.id},
