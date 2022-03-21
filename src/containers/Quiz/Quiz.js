@@ -105,7 +105,6 @@ class Quiz extends React.Component {
         } catch (e) {
             console.log(e)
         }
-        console.log('Quiz ID = ', )
     }
 
     render () {
