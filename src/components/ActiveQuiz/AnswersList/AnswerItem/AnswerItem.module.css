@@ -6,10 +6,7 @@
     cursor: pointer;
 }
 
-.AnswerItem:hover {
-    background: rgba(255, 255, 255, .2);
-    transition: background .3s ease-in-out;
-}
+
 
 .AnswerItem.success {
     background: rgba(161, 240, 69, .7);
@@ -18,3 +15,31 @@
 .AnswerItem.error {
     background: rgba(240, 87, 108, .7);
 }
+
+@media (pointer: fine) {
+    .AnswerItem:hover {
+        background: rgba(255, 255, 255, .2);
+        transition: background .3s ease-in-out;
+    }
+    .AnswerItem.success {
+        background: rgba(161, 240, 69, .7);
+    }
+    
+    .AnswerItem.error {
+        background: rgba(240, 87, 108, .7);
+    }
+}
+
+/* @media (hover) {
+    .AnswerItem:hover {
+        background: rgba(255, 255, 255, .2);
+        transition: background .3s ease-in-out;
+    }
+    .AnswerItem.success {
+        background: rgba(161, 240, 69, .7);
+    }
+    
+    .AnswerItem.error {
+        background: rgba(240, 87, 108, .7);
+    }
+} */

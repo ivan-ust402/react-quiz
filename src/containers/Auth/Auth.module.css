@@ -8,8 +8,7 @@
 }
 
 .Auth > div {
-    width: 100px;
-    min-width: 350px;
+   width: 600px;
     padding: 0 20px;
 }
 
@@ -24,3 +23,4 @@
     padding: 15px;
     border-radius: 5px;
 }
+

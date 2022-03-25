@@ -11,3 +11,19 @@
     display: flex;
     justify-content: space-between;
 }
+
+/* display: inline-block; */
+
+/* 320px - 576px */
+@media screen and (max-width:576px) {
+    .Question {
+        display: block;
+    }
+    .Question > span {
+        display: block;
+        margin-bottom: 10px;
+    }
+    .Question > small {
+        display: block;
+    }
+}
